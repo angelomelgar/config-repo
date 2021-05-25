@@ -1,5 +1,5 @@
 server:
-  port: 8093
+  port: 8091
 
 # To See H2 Console in Browser:
 # http://localhost:8092/h2-console
@@ -9,7 +9,7 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:claimsDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:productDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driverClassName: org.h2.Driver
     platform: h2
     username: sa
