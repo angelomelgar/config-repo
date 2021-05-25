@@ -1,0 +1,29 @@
+server:
+  port: 8093
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: mov-claims-ms
+          uri: lb://mov-claims-ms
+          predicates:
+            - Path=/claims/**
+
+        - id: mov-claims-ms-client
+          uri: lb://mov-claims-ms-client
+          predicates:
+            - Path=/customers/**
+
+        - id: mov-claims-ms-product
+          uri: lb://mov-claims-ms-product
+          predicates:
+            - Path=/products/**
