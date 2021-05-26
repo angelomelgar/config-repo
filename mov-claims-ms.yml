@@ -14,7 +14,17 @@ spring:
     platform: h2
     username: sa
     password:
-
+    hikari:
+      # ===Número máximo de conexiones en el Pool
+      maximum-pool-size: 10
+      # ===Tiempo de espera de conexión de la base de datos
+      connection-timeout: 30000
+      # ====Número mínimo de conexiones inactivas
+      minimum-idle: 5
+      # ====Tiempo máximo para vivir una conexión inactiva
+      idle-timeout: 180000
+      # ====Este atributo controla el ciclo de vida máximo de la conexión en el grupo.
+      max-lifetime: 90000
   # ===============================
   # JPA / HIBERNATE
   # ===============================
